@@ -105,7 +105,6 @@ sup {
 
 /* ---------- hero furniture ---------- */
 .wordmark,
-.rail,
 .hero-copy {
   position: absolute;
   z-index: 3;
@@ -119,34 +118,6 @@ sup {
   letter-spacing: -0.025em;
   color: var(--white);
   text-decoration: none;
-}
-
-/* left rail of icons */
-.rail {
-  left: var(--pad);
-  bottom: clamp(3rem, 14vh, 9rem);
-  display: flex;
-  flex-direction: column;
-  gap: clamp(1.1rem, 2.4vh, 1.9rem);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.rail a {
-  display: block;
-  color: var(--dimmer);
-  transition: color 0.35s ease;
-}
-
-.rail a:hover {
-  color: var(--white);
-}
-
-.rail svg {
-  width: 21px;
-  height: 21px;
-  display: block;
 }
 
 /* The hero copy: eyebrow / headline / statement / credit stacked in the left
@@ -494,13 +465,6 @@ main {
   .works li {
     grid-template-columns: 1fr;
     gap: 0.7rem;
-  }
-
-  .rail {
-    flex-direction: row;
-    bottom: auto;
-    top: calc(var(--pad) + 3.2rem);
-    gap: 1.1rem;
   }
 }
 
