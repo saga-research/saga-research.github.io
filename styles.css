@@ -256,6 +256,8 @@ main {
   font-size: 0.9rem;
   font-weight: 400;
   color: var(--dim);
+  /* even out the wrap instead of leaving a short orphan last line */
+  text-wrap: balance;
 }
 
 .note a,
@@ -277,6 +279,12 @@ main {
 .statement.lower {
   font-size: clamp(1.5rem, 3.4vw, 2.6rem);
   letter-spacing: -0.035em;
+}
+
+/* the contact note is a fixed two-sentence line; a measure just over half its
+   length forces two near-equal lines even where text-wrap: balance is ignored */
+.note.lower {
+  max-width: 68ch;
 }
 
 /* ---------- featured-on ---------- */

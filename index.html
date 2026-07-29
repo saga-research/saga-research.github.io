@@ -5,13 +5,13 @@
     "anon"    — unnamed: no wordmark, abstract favicon, dimmed aurora
   Everything else (copy, work list, contact) is identical between the two.
 -->
-<html lang="en" data-style="default">
+<html lang="en" data-style="anon">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Saga Research: Systems for Agentic Grounded Autonomy. Bringing robots into realistic, real-world settings."
+      content="Saga Research: Systems for Adaptive Grounded Autonomy. Bringing robots into realistic, real-world settings."
     />
     <title>saga research</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
@@ -30,12 +30,12 @@
          them here. The CSS-side changes hang off [data-style] in styles.css. -->
     <script>
       if (document.documentElement.dataset.style === "anon") {
-        document.title = "Systems for Agentic Grounded Autonomy";
+        document.title = "Systems for Adaptive Grounded Autonomy";
         document
           .querySelector('meta[name="description"]')
           .setAttribute(
             "content",
-            "Systems for Agentic Grounded Autonomy. Bringing robots into realistic, real-world settings."
+            "Systems for Adaptive Grounded Autonomy. Bringing robots into realistic, real-world settings."
           );
         document.querySelector('link[rel="icon"][type="image/svg+xml"]').href =
           "favicon-anon.svg";
@@ -61,7 +61,7 @@
       <a class="wordmark" href="#">Saga Research</a>
 
       <div class="hero-copy">
-        <p class="eyebrow">Systems for Agentic Grounded Autonomy</p>
+        <p class="eyebrow">Systems for Adaptive Grounded Autonomy</p>
 
         <h1 class="headline">
           Teaching robots to work in <span class="dim">ordinary places</span>.
@@ -82,7 +82,7 @@
              data-featured picks the variant: "single" (one credit) or
              "marquee" (the scrolling logo strip). Only the chosen one shows. -->
         <div class="hero-featured" data-featured="single">
-          <p class="eyebrow">Featured on</p>
+          <p class="eyebrow">Work presented at</p>
 
           <!-- single -->
           <p class="featured-single">
@@ -197,12 +197,12 @@
       <section class="block" id="contact">
         <p class="eyebrow">Contact</p>
         <p class="statement lower">
-          got a robot? let's make it smarter.
+          got a robot to deploy? let's chat!
         </p>
         <a class="mail lower" href="mailto:saga.research.ai@gmail.com">saga.research.ai@gmail.com</a>
         <p class="note lower">
-          we'll bring the intelligence stack. looking for real places to
-          deploy, partnerships and pilots welcome :)
+          we're building the intelligence tools that gets robots operating in the
+          wild. if you've got a robot and a task in mind, we'd love to help :)
         </p>
       </section>
     </main>

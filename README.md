@@ -1,6 +1,6 @@
 # saga-research.github.io
 
-Landing site for **Saga Research** — systems for agentic grounded autonomy.
+Landing site for **Saga Research** — systems for adaptive grounded autonomy.
 
 **[saga-research.github.io](https://saga-research.github.io/)**
 
@@ -35,7 +35,7 @@ How loudly the site names itself.
 | Value | Wordmark | Favicon | Tab title | Aurora |
 | --- | --- | --- | --- | --- |
 | `default` | "Saga Research" top-left | `favicon.svg` | saga research | full strength |
-| `anon` | hidden | `favicon-anon.svg` | Systems for Agentic Grounded Autonomy | `opacity: 0.42` |
+| `anon` | hidden | `favicon-anon.svg` | Systems for Adaptive Grounded Autonomy | `opacity: 0.42` |
 
 The wordmark and aurora hang off `[data-style="anon"]` rules in `styles.css`.
 Title, favicon, and meta description live in `<head>`, so a small inline script
