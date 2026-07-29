@@ -75,6 +75,17 @@ sup {
     screen, screen, screen, normal;
 }
 
+/* ---------- anon style ---------- */
+/* set data-style="anon" on <html>: the wordmark goes away and the aurora
+   drops back to a suggestion of colour */
+[data-style="anon"] .wordmark {
+  display: none;
+}
+
+[data-style="anon"] .aurora {
+  opacity: 0.42;
+}
+
 /* measuring grid: hairlines with a plus at every intersection */
 .mesh {
   position: absolute;
@@ -216,6 +227,11 @@ main {
   border-top: 0;
 }
 
+/* the page ends on the last block, so it needs a little breathing room */
+.block:last-child {
+  padding-bottom: clamp(3.4rem, 8vh, 5.5rem);
+}
+
 .eyebrow {
   margin: 0 0 1.2rem;
   font-size: 0.68rem;
@@ -263,7 +279,37 @@ main {
   letter-spacing: -0.035em;
 }
 
-/* ---------- featured-on marquee ---------- */
+/* ---------- featured-on ---------- */
+/* the variant switch lives on .hero-featured[data-featured] in the markup */
+.hero-featured[data-featured="single"] .marquee,
+.hero-featured[data-featured="marquee"] .featured-single {
+  display: none;
+}
+
+.featured-single {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 0;
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--dim);
+  opacity: 0.8;
+  transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.featured-single:hover {
+  color: var(--white);
+  opacity: 1;
+}
+
+.featured-single img {
+  display: block;
+  height: clamp(18px, 1.65vw, 22px);
+  width: auto;
+}
+
 .marquee {
   position: relative;
   overflow: hidden;
@@ -432,21 +478,6 @@ main {
 
 .mail:hover {
   border-color: var(--white);
-}
-
-.foot {
-  position: relative;
-  z-index: 3;
-  max-width: 1560px;
-  margin: 0 auto;
-  padding: 1.2rem var(--pad) 1.4rem;
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  font-size: 0.68rem;
-  letter-spacing: 0.1em;
-  color: var(--dimmer);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /* ---------- responsive ---------- */

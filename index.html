@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--
+  data-style picks the presentation:
+    "default" — named: Saga Research wordmark, saga favicon, full-strength aurora
+    "anon"    — unnamed: no wordmark, abstract favicon, dimmed aurora
+  Everything else (copy, work list, contact) is identical between the two.
+-->
+<html lang="en" data-style="default">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,6 +25,29 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+
+    <!-- title/favicon/description live in <head>, so the anon variant swaps
+         them here. The CSS-side changes hang off [data-style] in styles.css. -->
+    <script>
+      if (document.documentElement.dataset.style === "anon") {
+        document.title = "Systems for Agentic Grounded Autonomy";
+        document
+          .querySelector('meta[name="description"]')
+          .setAttribute(
+            "content",
+            "Systems for Agentic Grounded Autonomy. Bringing robots into realistic, real-world settings."
+          );
+        document.querySelector('link[rel="icon"][type="image/svg+xml"]').href =
+          "favicon-anon.svg";
+        // the 32px PNG and touch icon still carry the named mark; drop them
+        // rather than ship a mismatched fallback
+        document
+          .querySelectorAll('link[rel="icon"][sizes], link[rel="apple-touch-icon"]')
+          .forEach(function (el) {
+            el.remove();
+          });
+      }
+    </script>
   </head>
   <body>
     <!-- ===================== hero ===================== -->
@@ -45,14 +74,23 @@
         </p>
 
         <p class="hero-note">
-          This work is done by PhDs at
+          By CS PhDs at
           <a href="https://ai.stanford.edu/">Stanford Artificial Intelligence Laboratory (SAIL)</a>.
         </p>
 
-        <!-- right column, sharing the statement's row -->
-        <div class="hero-featured">
+        <!-- right column, sharing the statement's row.
+             data-featured picks the variant: "single" (one credit) or
+             "marquee" (the scrolling logo strip). Only the chosen one shows. -->
+        <div class="hero-featured" data-featured="single">
           <p class="eyebrow">Featured on</p>
-          <!-- Track is duplicated so the loop is seamless; edit both copies. -->
+
+          <!-- single -->
+          <p class="featured-single">
+            <img class="logo-sq" src="logos/yc.svg" alt="Y Combinator" />
+            <span>YC Paper Club</span>
+          </p>
+
+          <!-- marquee: track is duplicated so the loop is seamless; edit both copies. -->
           <div class="marquee">
             <div class="marquee-track">
               <ul class="logos">
@@ -87,7 +125,7 @@
             <span class="work-main">
               <span class="work-name">Titan <em>(WIP)</em></span>
               <span class="work-links">
-              <a href="https://github.com/jadee-dao/titan" aria-label="Titan: site" title="Site">
+              <a href="https://github.com/saga-research/titan" aria-label="Titan: site" title="Site">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
                   <circle cx="12" cy="12" r="9" />
                   <path d="M3 12h18M12 3c2.5 2.4 2.5 15.6 0 18M12 3c-2.5 2.4-2.5 15.6 0 18" />
@@ -168,11 +206,6 @@
         </p>
       </section>
     </main>
-
-    <footer class="foot">
-      <span>Saga Research<sup>®</sup></span>
-      <span>Stanford SAIL</span>
-    </footer>
 
   </body>
 </html>
