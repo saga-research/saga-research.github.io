@@ -63,6 +63,25 @@ the single credit, edit the `.featured-single` paragraph. To change the
 marquee, edit **both** copies of the `<ul class="logos">` — it's duplicated so
 the loop is seamless.
 
+### `data-contact` on `#contact`
+
+Which address the contact section offers.
+
+```html
+<section class="block" id="contact" data-contact="entity">
+```
+
+| Value | Shows |
+| --- | --- |
+| `entity` | The shared org inbox — `saga.research.ai@gmail.com` |
+| `authors` | Each author's Stanford address, side by side |
+| `shared` | The joint personal inbox |
+
+All three stay in the markup, tagged with `data-mail`; the inactive ones are
+hidden in CSS. The `authors` variant is a flex row that stacks on narrow
+screens, so adding a third author needs no CSS change — just another `<a>`
+inside `.mails`.
+
 ## Local preview
 
 No build step — it's static.

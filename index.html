@@ -194,12 +194,27 @@
         </ul>
       </section>
 
-      <section class="block" id="contact">
+      <!-- data-contact picks which address(es) show:
+             "entity"  — the shared Saga Research inbox
+             "authors" — each author's Stanford address
+             "shared"  — the joint personal inbox -->
+      <section class="block" id="contact" data-contact="entity">
         <p class="eyebrow">Contact</p>
         <p class="statement lower">
           got a robot to deploy? let's chat!
         </p>
-        <a class="mail lower" href="mailto:saga.research.ai@gmail.com">saga.research.ai@gmail.com</a>
+
+        <!-- entity -->
+        <a class="mail lower" data-mail="entity" href="mailto:saga.research.ai@gmail.com">saga.research.ai@gmail.com</a>
+
+        <!-- authors -->
+        <span class="mails" data-mail="authors">
+          <a class="mail lower" href="mailto:jadelynn@cs.stanford.edu">jadelynn@cs.stanford.edu</a>
+          <a class="mail lower" href="mailto:mganai@cs.stanford.edu">mganai@cs.stanford.edu</a>
+        </span>
+
+        <!-- shared -->
+        <a class="mail lower" data-mail="shared" href="mailto:jadelynnmilanclaude@gmail.com">jadelynnmilanclaude@gmail.com</a>
         <p class="note lower">
           we're building the intelligence tools that gets robots operating in the
           wild. if you've got a robot and a task in mind, we'd love to help :)

@@ -488,6 +488,21 @@ main {
   border-color: var(--white);
 }
 
+/* the variant switch lives on #contact[data-contact] in the markup */
+#contact[data-contact="entity"] [data-mail]:not([data-mail="entity"]),
+#contact[data-contact="authors"] [data-mail]:not([data-mail="authors"]),
+#contact[data-contact="shared"] [data-mail]:not([data-mail="shared"]) {
+  display: none;
+}
+
+/* two addresses side by side, stacking on narrow screens */
+.mails {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.6rem clamp(1.2rem, 3vw, 2.4rem);
+}
+
 /* ---------- responsive ---------- */
 @media (max-width: 900px) {
   .hero-copy {
